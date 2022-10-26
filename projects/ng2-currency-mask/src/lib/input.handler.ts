@@ -150,6 +150,10 @@ export class InputHandler {
         }, 1);
     }
 
+    handleFocusOut(e: Event): void {
+        this.onModelChange(this.inputService.value);
+    }
+
     updateOptions(options: any): void {
         this.inputService.updateOptions(options);
     }

@@ -102,6 +102,13 @@ export class CurrencyMaskDirective implements AfterViewInit, ControlValueAccesso
         }
     }
 
+    @HostListener("focusout", ["$event"])
+    handleFocusOut(event: any) {
+        if (!this.isChromeAndroid()) {
+            this.inputHandler.handleFocusOut(event);
+        }
+    }
+
     @HostListener("keypress", ["$event"])
     handleKeypress(event: any) {
         if (!this.isChromeAndroid()) {
